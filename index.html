@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Creative Services</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            overflow-x: hidden;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background: #333;
+            color: #f4f4f9;
+        }
+
+        /* Header Section */
+        header {
+            position: relative;
+            text-align: center;
+            padding: 50px;
+            background: #6c63ff;
+            color: #fff;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .dash {
+            width: 90%;
+            height: 8px;
+            background: #fff;
+            margin: 20px auto 0;
+            animation: dashGrow 2s ease-in-out infinite;
+        }
+
+        @keyframes dashGrow {
+            0% { transform: scaleX(0); }
+            100% { transform: scaleX(1); }
+        }
+
+        /* Dark Mode Button */
+        .dark-mode-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #6c63ff, #5848c2);
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #fff;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: linear-gradient(45deg, #444, #222);
+            color: #f4f4f9;
+        }
+
+        /* Main Section */
+        .main {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .main h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #6c63ff;
+        }
+
+        .profile-photo {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .service {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        body.dark-mode .service {
+            background: #444;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+        }
+
+        .service h3 {
+            color: #6c63ff;
+        }
+
+        body.dark-mode .service h3 {
+            color: #fff;
+        }
+
+        .service p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #6c63ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #5848c2;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .contact-form input, .contact-form button, .contact-form textarea {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background: #6c63ff;
+            color: white;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #5848c2;
+        }
+
+        .submit-dash {
+            width: 80%;
+            height: 8px;
+            background: #6c63ff;
+            margin: 20px auto 0;
+            display: none;
+        }
+
+        .submit-dash.active {
+            display: block;
+            animation: dashGrow 1s forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Your Creative Hub</h1>
+        <p>Writing Stories & Building Stunning Websites</p>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <div class="dash"></div>
+    </header>
+
+    <!-- Main Section -->
+    <section class="main">
+        <img src="photo_2024-06-13_15-44-18.jpg" alt="Tesfamichael Getachew" class="profile-photo">
+        <h2>Our Services</h2>
+        <div class="services">
+            <!-- Writing Service -->
+            <div class="service">
+                <h3>Writing Services</h3>
+                <p>Captivating stories for children and adults. From imaginative tales to heartfelt narratives, let me bring your vision to life!</p>
+                <a href="#" class="btn"></a>
+            </div>
+
+            <!-- Web Development Service -->
+            <div class="service">
+                <h3>Web Development</h3>
+                <p>Professional, modern, and user-friendly websites tailored to your needs. Let's create your digital masterpiece!</p>
+                <a href="#" class="btn"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form">
+        <h2>Place an Order</h2>
+        <form id="orderForm" onsubmit="handleSubmit(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            
+            <!-- New large dash for writing the order -->
+            <h3>Write Your Order</h3>
+            <textarea id="order" placeholder="Write your order here..." rows="5" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <div class="submit-dash"></div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Tesfamichael G. | All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="https://t.me/Tesfagt" title="Follow on Telegram">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+            </a>
+            <a href="https://twitter.com/Tesfamicha8396" title="Follow on Twitter">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+            </a>
+            <a href="https://instagram.com/tesfamichaelgt" title="Follow on Instagram">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+            </a>
+            <a href="mailto:tesfamichael2061@gmail.com" title="Send an Email">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+            </a>
+        </div>
+    </footer>
+
+    <!-- EmailJS Script -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("your_user_id");  // Replace with your EmailJS user ID
+        })();
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const order = document.getElementById("order").value;
+
+            const templateParams = {
+                user_name: name,
+                user_email: email,
+                user_order: order
+            };
+
+            emailjs.send("your_service_id", "your_template_id", templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response);
+                    alert("Order submitted successfully!");
+                    document.getElementById("orderForm").reset(); // Reset the form
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert("There was an error submitting your order. Please try again later.");
+                });
+        }
+    </script>
+
+    <script>
+        // Toggle Dark Mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+</html>
